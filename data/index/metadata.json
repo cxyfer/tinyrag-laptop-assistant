@@ -1,0 +1,840 @@
+[
+  {
+    "id": "field-0000-BXH-adapter",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Adapter\nAliases: Adapter, adapter, charger, 變壓器, 電源, 330W\nOfficial value: 330W\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Adapter",
+    "value": "330W",
+    "aliases": [
+      "Adapter",
+      "adapter",
+      "charger",
+      "變壓器",
+      "電源",
+      "330W"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0001-BXH-audio",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Audio\nAliases: Audio, audio, speaker, 喇叭, 音效\nOfficial value: Dolby Atmos audio with dual speakers and dual microphones\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Audio",
+    "value": "Dolby Atmos audio with dual speakers and dual microphones",
+    "aliases": [
+      "Audio",
+      "audio",
+      "speaker",
+      "喇叭",
+      "音效"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0002-BXH-battery",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Battery\nAliases: Battery, battery, 電池, Wh, 99Wh\nOfficial value: 99Wh\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Battery",
+    "value": "99Wh",
+    "aliases": [
+      "Battery",
+      "battery",
+      "電池",
+      "Wh",
+      "99Wh"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0003-BXH-cpu",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: CPU\nAliases: CPU, processor, 處理器, 中央處理器\nOfficial value: Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "CPU",
+    "value": "Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz",
+    "aliases": [
+      "CPU",
+      "processor",
+      "處理器",
+      "中央處理器"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0004-BXH-color",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Color\nAliases: Color, color, colour, 顏色\nOfficial value: Dark Tide\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Color",
+    "value": "Dark Tide",
+    "aliases": [
+      "Color",
+      "color",
+      "colour",
+      "顏色"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0005-BXH-communication",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Communication\nAliases: Communication, communication, wireless, Wi-Fi, Bluetooth, 通訊\nOfficial value: Wi-Fi 7, Bluetooth 5.4\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Communication",
+    "value": "Wi-Fi 7, Bluetooth 5.4",
+    "aliases": [
+      "Communication",
+      "communication",
+      "wireless",
+      "Wi-Fi",
+      "Bluetooth",
+      "通訊"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0006-BXH-dimensions",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Dimensions\nAliases: Dimensions, dimensions, size, 尺寸\nOfficial value: 357 x 254 x 23-29.9 mm\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Dimensions",
+    "value": "357 x 254 x 23-29.9 mm",
+    "aliases": [
+      "Dimensions",
+      "dimensions",
+      "size",
+      "尺寸"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0007-BXH-display",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Display\nAliases: Display, display, screen, 螢幕, 顯示器, OLED\nOfficial value: 16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%, Dolby Vision, NVIDIA G-SYNC, Advanced Optimus\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Display",
+    "value": "16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%, Dolby Vision, NVIDIA G-SYNC, Advanced Optimus",
+    "aliases": [
+      "Display",
+      "display",
+      "screen",
+      "螢幕",
+      "顯示器",
+      "OLED"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0008-BXH-gpu",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: GPU\nAliases: GPU, graphics, 顯示晶片, 顯卡, 顯示卡, graphics card\nOfficial value: NVIDIA® GeForce RTX™ 5090 Laptop GPU 24GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1797 MHz\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "GPU",
+    "value": "NVIDIA® GeForce RTX™ 5090 Laptop GPU 24GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1797 MHz",
+    "aliases": [
+      "GPU",
+      "graphics",
+      "顯示晶片",
+      "顯卡",
+      "顯示卡",
+      "graphics card"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0009-BXH-memory",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Memory\nAliases: Memory, memory, RAM, 記憶體, DDR5\nOfficial value: Up to 64GB DDR5-5600, 2x SO-DIMM slots\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Memory",
+    "value": "Up to 64GB DDR5-5600, 2x SO-DIMM slots",
+    "aliases": [
+      "Memory",
+      "memory",
+      "RAM",
+      "記憶體",
+      "DDR5"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0010-BXH-ports",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Ports\nAliases: Ports, ports, I/O, 連接埠, Thunderbolt, USB, HDMI\nOfficial value: HDMI 2.1, Thunderbolt™ 5 USB-C, Thunderbolt™ 4 USB-C, 2x USB-A 3.2 Gen2, RJ-45, MicroSD UHS-II, audio combo jack\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Ports",
+    "value": "HDMI 2.1, Thunderbolt™ 5 USB-C, Thunderbolt™ 4 USB-C, 2x USB-A 3.2 Gen2, RJ-45, MicroSD UHS-II, audio combo jack",
+    "aliases": [
+      "Ports",
+      "ports",
+      "I/O",
+      "連接埠",
+      "Thunderbolt",
+      "USB",
+      "HDMI"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0011-BXH-security",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Security\nAliases: Security, security, fingerprint, TPM, 安全\nOfficial value: Firmware-based TPM, Kensington lock, Windows Hello IR camera\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Security",
+    "value": "Firmware-based TPM, Kensington lock, Windows Hello IR camera",
+    "aliases": [
+      "Security",
+      "security",
+      "fingerprint",
+      "TPM",
+      "安全"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0012-BXH-storage",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Storage\nAliases: Storage, storage, SSD, 儲存, 硬碟, M.2\nOfficial value: 1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Storage",
+    "value": "1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD",
+    "aliases": [
+      "Storage",
+      "storage",
+      "SSD",
+      "儲存",
+      "硬碟",
+      "M.2"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0013-BXH-webcam",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Webcam\nAliases: Webcam, webcam, camera, 視訊, 鏡頭\nOfficial value: FHD IR camera with Windows Hello support\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Webcam",
+    "value": "FHD IR camera with Windows Hello support",
+    "aliases": [
+      "Webcam",
+      "webcam",
+      "camera",
+      "視訊",
+      "鏡頭"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0014-BXH-weight",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BXH\nField: Weight\nAliases: Weight, weight, 重量, kg\nOfficial value: ~2.5 kg\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BXH",
+    "field": "Weight",
+    "value": "~2.5 kg",
+    "aliases": [
+      "Weight",
+      "weight",
+      "重量",
+      "kg"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0015-BYH-adapter",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Adapter\nAliases: Adapter, adapter, charger, 變壓器, 電源, 330W\nOfficial value: 330W\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Adapter",
+    "value": "330W",
+    "aliases": [
+      "Adapter",
+      "adapter",
+      "charger",
+      "變壓器",
+      "電源",
+      "330W"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0016-BYH-audio",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Audio\nAliases: Audio, audio, speaker, 喇叭, 音效\nOfficial value: Dolby Atmos audio with dual speakers and dual microphones\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Audio",
+    "value": "Dolby Atmos audio with dual speakers and dual microphones",
+    "aliases": [
+      "Audio",
+      "audio",
+      "speaker",
+      "喇叭",
+      "音效"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0017-BYH-battery",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Battery\nAliases: Battery, battery, 電池, Wh, 99Wh\nOfficial value: 99Wh\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Battery",
+    "value": "99Wh",
+    "aliases": [
+      "Battery",
+      "battery",
+      "電池",
+      "Wh",
+      "99Wh"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0018-BYH-cpu",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: CPU\nAliases: CPU, processor, 處理器, 中央處理器\nOfficial value: Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "CPU",
+    "value": "Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz",
+    "aliases": [
+      "CPU",
+      "processor",
+      "處理器",
+      "中央處理器"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0019-BYH-color",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Color\nAliases: Color, color, colour, 顏色\nOfficial value: Dark Tide\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Color",
+    "value": "Dark Tide",
+    "aliases": [
+      "Color",
+      "color",
+      "colour",
+      "顏色"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0020-BYH-communication",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Communication\nAliases: Communication, communication, wireless, Wi-Fi, Bluetooth, 通訊\nOfficial value: Wi-Fi 7, Bluetooth 5.4\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Communication",
+    "value": "Wi-Fi 7, Bluetooth 5.4",
+    "aliases": [
+      "Communication",
+      "communication",
+      "wireless",
+      "Wi-Fi",
+      "Bluetooth",
+      "通訊"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0021-BYH-dimensions",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Dimensions\nAliases: Dimensions, dimensions, size, 尺寸\nOfficial value: 357 x 254 x 23-29.9 mm\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Dimensions",
+    "value": "357 x 254 x 23-29.9 mm",
+    "aliases": [
+      "Dimensions",
+      "dimensions",
+      "size",
+      "尺寸"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0022-BYH-display",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Display\nAliases: Display, display, screen, 螢幕, 顯示器, OLED\nOfficial value: 16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%, Dolby Vision, NVIDIA G-SYNC, Advanced Optimus\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Display",
+    "value": "16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%, Dolby Vision, NVIDIA G-SYNC, Advanced Optimus",
+    "aliases": [
+      "Display",
+      "display",
+      "screen",
+      "螢幕",
+      "顯示器",
+      "OLED"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0023-BYH-gpu",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: GPU\nAliases: GPU, graphics, 顯示晶片, 顯卡, 顯示卡, graphics card\nOfficial value: NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "GPU",
+    "value": "NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz",
+    "aliases": [
+      "GPU",
+      "graphics",
+      "顯示晶片",
+      "顯卡",
+      "顯示卡",
+      "graphics card"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0024-BYH-memory",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Memory\nAliases: Memory, memory, RAM, 記憶體, DDR5\nOfficial value: Up to 64GB DDR5-5600, 2x SO-DIMM slots\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Memory",
+    "value": "Up to 64GB DDR5-5600, 2x SO-DIMM slots",
+    "aliases": [
+      "Memory",
+      "memory",
+      "RAM",
+      "記憶體",
+      "DDR5"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0025-BYH-ports",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Ports\nAliases: Ports, ports, I/O, 連接埠, Thunderbolt, USB, HDMI\nOfficial value: HDMI 2.1, Thunderbolt™ 5 USB-C, Thunderbolt™ 4 USB-C, 2x USB-A 3.2 Gen2, RJ-45, MicroSD UHS-II, audio combo jack\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Ports",
+    "value": "HDMI 2.1, Thunderbolt™ 5 USB-C, Thunderbolt™ 4 USB-C, 2x USB-A 3.2 Gen2, RJ-45, MicroSD UHS-II, audio combo jack",
+    "aliases": [
+      "Ports",
+      "ports",
+      "I/O",
+      "連接埠",
+      "Thunderbolt",
+      "USB",
+      "HDMI"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0026-BYH-security",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Security\nAliases: Security, security, fingerprint, TPM, 安全\nOfficial value: Firmware-based TPM, Kensington lock, Windows Hello IR camera\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Security",
+    "value": "Firmware-based TPM, Kensington lock, Windows Hello IR camera",
+    "aliases": [
+      "Security",
+      "security",
+      "fingerprint",
+      "TPM",
+      "安全"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0027-BYH-storage",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Storage\nAliases: Storage, storage, SSD, 儲存, 硬碟, M.2\nOfficial value: 1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Storage",
+    "value": "1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD",
+    "aliases": [
+      "Storage",
+      "storage",
+      "SSD",
+      "儲存",
+      "硬碟",
+      "M.2"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0028-BYH-webcam",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Webcam\nAliases: Webcam, webcam, camera, 視訊, 鏡頭\nOfficial value: FHD IR camera with Windows Hello support\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Webcam",
+    "value": "FHD IR camera with Windows Hello support",
+    "aliases": [
+      "Webcam",
+      "webcam",
+      "camera",
+      "視訊",
+      "鏡頭"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0029-BYH-weight",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BYH\nField: Weight\nAliases: Weight, weight, 重量, kg\nOfficial value: ~2.5 kg\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BYH",
+    "field": "Weight",
+    "value": "~2.5 kg",
+    "aliases": [
+      "Weight",
+      "weight",
+      "重量",
+      "kg"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0030-BZH-adapter",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Adapter\nAliases: Adapter, adapter, charger, 變壓器, 電源, 330W\nOfficial value: 330W\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Adapter",
+    "value": "330W",
+    "aliases": [
+      "Adapter",
+      "adapter",
+      "charger",
+      "變壓器",
+      "電源",
+      "330W"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0031-BZH-audio",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Audio\nAliases: Audio, audio, speaker, 喇叭, 音效\nOfficial value: Dolby Atmos audio with dual speakers and dual microphones\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Audio",
+    "value": "Dolby Atmos audio with dual speakers and dual microphones",
+    "aliases": [
+      "Audio",
+      "audio",
+      "speaker",
+      "喇叭",
+      "音效"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0032-BZH-battery",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Battery\nAliases: Battery, battery, 電池, Wh, 99Wh\nOfficial value: 99Wh\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Battery",
+    "value": "99Wh",
+    "aliases": [
+      "Battery",
+      "battery",
+      "電池",
+      "Wh",
+      "99Wh"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0033-BZH-cpu",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: CPU\nAliases: CPU, processor, 處理器, 中央處理器\nOfficial value: Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "CPU",
+    "value": "Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz",
+    "aliases": [
+      "CPU",
+      "processor",
+      "處理器",
+      "中央處理器"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0034-BZH-color",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Color\nAliases: Color, color, colour, 顏色\nOfficial value: Dark Tide\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Color",
+    "value": "Dark Tide",
+    "aliases": [
+      "Color",
+      "color",
+      "colour",
+      "顏色"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0035-BZH-communication",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Communication\nAliases: Communication, communication, wireless, Wi-Fi, Bluetooth, 通訊\nOfficial value: Wi-Fi 7, Bluetooth 5.4\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Communication",
+    "value": "Wi-Fi 7, Bluetooth 5.4",
+    "aliases": [
+      "Communication",
+      "communication",
+      "wireless",
+      "Wi-Fi",
+      "Bluetooth",
+      "通訊"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0036-BZH-dimensions",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Dimensions\nAliases: Dimensions, dimensions, size, 尺寸\nOfficial value: 357 x 254 x 23-29.9 mm\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Dimensions",
+    "value": "357 x 254 x 23-29.9 mm",
+    "aliases": [
+      "Dimensions",
+      "dimensions",
+      "size",
+      "尺寸"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0037-BZH-display",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Display\nAliases: Display, display, screen, 螢幕, 顯示器, OLED\nOfficial value: 16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%, Dolby Vision, NVIDIA G-SYNC, Advanced Optimus\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Display",
+    "value": "16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%, Dolby Vision, NVIDIA G-SYNC, Advanced Optimus",
+    "aliases": [
+      "Display",
+      "display",
+      "screen",
+      "螢幕",
+      "顯示器",
+      "OLED"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0038-BZH-gpu",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: GPU\nAliases: GPU, graphics, 顯示晶片, 顯卡, 顯示卡, graphics card\nOfficial value: NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "GPU",
+    "value": "NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz",
+    "aliases": [
+      "GPU",
+      "graphics",
+      "顯示晶片",
+      "顯卡",
+      "顯示卡",
+      "graphics card"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0039-BZH-memory",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Memory\nAliases: Memory, memory, RAM, 記憶體, DDR5\nOfficial value: Up to 64GB DDR5-5600, 2x SO-DIMM slots\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Memory",
+    "value": "Up to 64GB DDR5-5600, 2x SO-DIMM slots",
+    "aliases": [
+      "Memory",
+      "memory",
+      "RAM",
+      "記憶體",
+      "DDR5"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0040-BZH-ports",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Ports\nAliases: Ports, ports, I/O, 連接埠, Thunderbolt, USB, HDMI\nOfficial value: HDMI 2.1, Thunderbolt™ 5 USB-C, Thunderbolt™ 4 USB-C, 2x USB-A 3.2 Gen2, RJ-45, MicroSD UHS-II, audio combo jack\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Ports",
+    "value": "HDMI 2.1, Thunderbolt™ 5 USB-C, Thunderbolt™ 4 USB-C, 2x USB-A 3.2 Gen2, RJ-45, MicroSD UHS-II, audio combo jack",
+    "aliases": [
+      "Ports",
+      "ports",
+      "I/O",
+      "連接埠",
+      "Thunderbolt",
+      "USB",
+      "HDMI"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0041-BZH-security",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Security\nAliases: Security, security, fingerprint, TPM, 安全\nOfficial value: Firmware-based TPM, Kensington lock, Windows Hello IR camera\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Security",
+    "value": "Firmware-based TPM, Kensington lock, Windows Hello IR camera",
+    "aliases": [
+      "Security",
+      "security",
+      "fingerprint",
+      "TPM",
+      "安全"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0042-BZH-storage",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Storage\nAliases: Storage, storage, SSD, 儲存, 硬碟, M.2\nOfficial value: 1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Storage",
+    "value": "1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD",
+    "aliases": [
+      "Storage",
+      "storage",
+      "SSD",
+      "儲存",
+      "硬碟",
+      "M.2"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0043-BZH-webcam",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Webcam\nAliases: Webcam, webcam, camera, 視訊, 鏡頭\nOfficial value: FHD IR camera with Windows Hello support\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Webcam",
+    "value": "FHD IR camera with Windows Hello support",
+    "aliases": [
+      "Webcam",
+      "webcam",
+      "camera",
+      "視訊",
+      "鏡頭"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "field-0044-BZH-weight",
+    "text": "Product: AORUS MASTER 16 AM6H\nVariant: BZH\nField: Weight\nAliases: Weight, weight, 重量, kg\nOfficial value: ~2.5 kg\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "BZH",
+    "field": "Weight",
+    "value": "~2.5 kg",
+    "aliases": [
+      "Weight",
+      "weight",
+      "重量",
+      "kg"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "field"
+  },
+  {
+    "id": "compare-gpu",
+    "text": "Product: AORUS MASTER 16 AM6H\nComparison field: GPU\nVariant values: BXH: NVIDIA® GeForce RTX™ 5090 Laptop GPU 24GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1797 MHz; BYH: NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz; BZH: NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz\nAliases: GPU, graphics, 顯示晶片, 顯卡, 顯示卡, graphics card\nSource: https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "product": "AORUS MASTER 16 AM6H",
+    "variant": "ALL",
+    "field": "GPU",
+    "value": "BXH: NVIDIA® GeForce RTX™ 5090 Laptop GPU 24GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1797 MHz; BYH: NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz; BZH: NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz",
+    "aliases": [
+      "GPU",
+      "graphics",
+      "顯示晶片",
+      "顯卡",
+      "顯示卡",
+      "graphics card"
+    ],
+    "source_url": "https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp",
+    "notes": "",
+    "kind": "comparison"
+  }
+]
