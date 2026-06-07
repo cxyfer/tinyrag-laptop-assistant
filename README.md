@@ -1,5 +1,7 @@
 # TinyRAG Laptop Assistant
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cxyfer/tinyrag-laptop-assistant/blob/main/notebooks/tinyrag_colab_cuda.ipynb)
+
 TinyRAG is a uv-managed pure Python RAG assistant for answering grounded questions about the GIGABYTE AORUS MASTER 16 AM6H specification page. It uses structured specification ingestion, local vector retrieval, and a llama.cpp-compatible streaming generation layer without LangChain, LlamaIndex, Ollama, hosted LLM APIs, or managed vector databases.
 
 ## Features
@@ -23,6 +25,38 @@ For real local generation, install an audited llama.cpp runtime in the environme
 
 The default tests and benchmark path do not require a real local model. They use a deterministic mock streaming backend.
 
+## Google Colab CUDA Quickstart
+
+Open the notebook directly in Colab:
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cxyfer/tinyrag-laptop-assistant/blob/main/notebooks/tinyrag_colab_cuda.ipynb)
+
+Set **Runtime > Change runtime type > GPU**, then run the notebook cells. The notebook clones this repository, installs the CUDA llama.cpp wheel through `uv`, downloads the Qwen2.5 1.5B Q4_K_M GGUF model, rebuilds the local index from the cached source, and runs a grounded answer with GPU offload.
+
+Equivalent Colab shell flow:
+
+```bash
+nvidia-smi
+git clone --branch main https://github.com/cxyfer/tinyrag-laptop-assistant.git
+cd tinyrag-laptop-assistant
+python -m pip install -q uv
+uv sync --frozen --extra llama-cu121
+uvx --from huggingface-hub hf download \
+  Qwen/Qwen2.5-1.5B-Instruct-GGUF \
+  qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --local-dir models
+uv run --frozen --extra llama-cu121 tinyrag ingest --prefer-cache
+uv run --frozen --extra llama-cu121 tinyrag build-index
+uv run --frozen --extra llama-cu121 tinyrag ask "BXH 使用哪一張顯示卡？" \
+  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --n-ctx 2048 \
+  --temperature 0.1 \
+  --max-tokens 256 \
+  --n-gpu-layers 35
+```
+
+`--n-gpu-layers 35` fully offloaded Qwen2.5 1.5B Q4_K_M on a Colab Tesla T4 during validation. Reduce it if your runtime reports lower VRAM.
+
 ## Local CPU Development
 
 Run ingestion from the cached source first for deterministic local development:
@@ -37,7 +71,7 @@ Ask with a real model after placing a GGUF file under `models/`:
 
 ```bash
 uv run tinyrag ask "BXH 使用哪一張顯示卡？" \
-  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --model-path models/qwen3.5-2b-q4_k_m.gguf \
   --n-ctx 2048 \
   --temperature 0.1 \
   --max-tokens 256 \
@@ -50,15 +84,23 @@ Use `--n-gpu-layers 0` for CPU-only testing. Increase it during CUDA validation 
 
 The primary inference path is llama.cpp through `llama-cpp-python` because GGUF quantization, CPU fallback, and `n_gpu_layers` GPU offload are a better fit for a single-user 4GB VRAM laptop assistant than high-throughput serving stacks.
 
-Recommended baseline:
+Recommended model tiers:
 
-- Small instruct GGUF model around 1.5B parameters.
-- Q4 quantization such as Q4_K_M.
-- Context length around 2048 for short specification answers.
-- Low temperature, e.g. `0.1`, because values must preserve exact model names, numbers, units, and variants.
-- Conservative GPU layer offload; fall back to CPU when VRAM is constrained.
+| Tier | Candidate | Role | 4GB note |
+|---|---|---|---|
+| Stable fallback | Qwen2.5-1.5B-Instruct-GGUF or Qwen2.5-3B-Instruct-GGUF | Official Qwen2.5 GGUF baseline for repeatable validation | Safest option; keep for comparison and fallback. |
+| Primary 2026 candidate | Qwen3.5-2B Q4_K_M GGUF | Newer Qwen open-weight model via community llama.cpp GGUF quantization | Strong first upgrade candidate; small enough for short-context 4GB testing. |
+| Secondary 2026 candidate | Gemma 4 E2B-it 4-bit GGUF | New Gemma 4 edge/laptop candidate with llama.cpp ecosystem support | Viable but tighter; start with conservative context length. |
 
-vLLM is not the default because its strengths are batching and server throughput on larger GPUs. For this assignment, llama.cpp provides lower operational complexity and finer-grained low-VRAM control. A 3B GGUF model can be tried later, but it is optional and may require tighter context length or fewer GPU layers.
+Practical settings:
+
+- Use low temperature, e.g. `0.1`, because values must preserve exact model names, numbers, units, and variants.
+- Start Qwen2.5 and Qwen3.5-2B with `--n-ctx 2048`; reduce if KV cache pressure appears.
+- Start Gemma 4 E2B with `--n-ctx 1024` or `1536`, then increase only after confirming memory headroom.
+- Start with `--n-gpu-layers 0` for CPU validation, then gradually increase GPU offload layers during CUDA testing.
+- Treat Qwen3.5 GGUF files as community quantizations of official Qwen3.5 weights unless the model repository is published by the Qwen organization.
+
+vLLM is not the default because its strengths are batching and server throughput on larger GPUs. For this assignment, llama.cpp provides lower operational complexity and finer-grained low-VRAM control. Larger models such as Qwen3.5-4B/9B or Gemma 4 E4B/12B can be evaluated later, but they are not recommended as 4GB defaults.
 
 ## Data and Artifacts
 
@@ -125,6 +167,31 @@ Current local placeholder results are produced by the mock backend and are inten
 uv run tinyrag benchmark --use-model --model-path models/<model>.gguf
 ```
 
+Suggested real-model benchmark order:
+
+```bash
+uv run tinyrag benchmark --use-model \
+  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --n-ctx 2048 \
+  --temperature 0.1 \
+  --max-tokens 256 \
+  --n-gpu-layers 0
+
+uv run tinyrag benchmark --use-model \
+  --model-path models/qwen3.5-2b-q4_k_m.gguf \
+  --n-ctx 2048 \
+  --temperature 0.1 \
+  --max-tokens 256 \
+  --n-gpu-layers 0
+
+uv run tinyrag benchmark --use-model \
+  --model-path models/gemma-4-e2b-it-q4.gguf \
+  --n-ctx 1024 \
+  --temperature 0.1 \
+  --max-tokens 256 \
+  --n-gpu-layers 0
+```
+
 ## Verification
 
 ```bash
@@ -136,3 +203,10 @@ uv run ruff check src tests
 
 - [GIGABYTE U.S.A. official AORUS MASTER 16 AM6H specifications](https://www.gigabyte.com/us/Laptop/AORUS-MASTER-16-AM6H/sp)
 - [AORUS official AORUS MASTER 16 AM6H specifications](https://www.aorus.com/en-us/laptops/aorus-master-16-am6h/Specification)
+- [Qwen3 official release blog](https://qwenlm.github.io/blog/qwen3/)
+- [Qwen3.5 official Hugging Face collection](https://huggingface.co/collections/Qwen/qwen35)
+- [Qwen2.5 official Hugging Face collection](https://huggingface.co/collections/Qwen/qwen25)
+- [Qwen3.5-2B community GGUF quantization](https://huggingface.co/bartowski/Qwen_Qwen3.5-2B-GGUF)
+- [Gemma releases — Google AI for Developers](https://ai.google.dev/gemma/docs/releases)
+- [Get started with Gemma models — Google AI for Developers](https://ai.google.dev/gemma/docs/get_started)
+- [Gemma 4 E2B-it community GGUF quantization](https://huggingface.co/unsloth/gemma-4-E2B-it-GGUF)
