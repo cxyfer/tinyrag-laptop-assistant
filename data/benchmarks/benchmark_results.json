@@ -113,20 +113,18 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.1797680659999514,
-        "tps": 49.555058064413636,
-        "generated_tokens": 96,
-        "total_seconds": 1.9372391789999597,
-        "answer": "這台 AM6H 的 CPU 規格是 Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz。 這款 CPU 有 24 處核心和 24 處線程，最高可達 5.4 GHz。 這款 CPU 有 24 處核心和 24 處"
+        "ttft_seconds": 1.4579735159998108,
+        "tps": 34.14347643498342,
+        "generated_tokens": 78,
+        "total_seconds": 2.2844773919998715,
+        "answer": "根據提供的資訊，這台 AORUS MASTER 16 AM6H 的 CPU 規格為 Intel® Core™ Ultra 9 Processor 275HX, 具有 24 個核心 / 24 異步線程，最高可達 5.4 GHz。此規格在所有變體中保持一致。"
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "token_limit_saturation"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
+        "token_limit_saturation": false,
         "excessive_repetition": false,
         "unsupported_elaboration": false
       }
@@ -252,20 +250,18 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.914153156999987,
-        "tps": 58.72987850279588,
-        "generated_tokens": 96,
-        "total_seconds": 1.6346023940000123,
-        "answer": "The BXH variant of the AORUS MASTER 16 AM6H uses the NVIDIA® GeForce RTX™ 5090 Laptop GPU 24GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1797 MHz. The BYH variant uses the NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with"
+        "ttft_seconds": 0.7912906349999957,
+        "tps": 47.54935337939483,
+        "generated_tokens": 67,
+        "total_seconds": 1.4090622740000072,
+        "answer": "The BXH variant of the AORUS MASTER 16 AM6H uses a NVIDIA® GeForce RTX™ 5090 Laptop GPU with 24GB GDDR7, 175W Maximum Graphics Power and Dynamic Boost. Its AI Boost clock speed is set to 1797 MHz."
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "token_limit_saturation"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
+        "token_limit_saturation": false,
         "excessive_repetition": false,
         "unsupported_elaboration": false
       }
@@ -392,11 +388,11 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.7937540940000076,
-        "tps": 63.23045963467961,
+        "ttft_seconds": 0.8354016550001688,
+        "tps": 53.437419035003884,
         "generated_tokens": 96,
-        "total_seconds": 1.5182556089999935,
-        "answer": "BYH 使用 NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz。 This GPU is part of the 16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%,"
+        "total_seconds": 1.7964939500000128,
+        "answer": "BYH 使用 NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz。 This is the display card for variant BYH. To answer this question: The product specification provided lists variants of AORUS MASTER 16 AM6H and their corresponding GPU specifications under field \"GPU\". Variant BYH has a value listed as NVIDIA"
       },
       "answer_quality": {
         "passes": false,
@@ -531,11 +527,11 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.7985005239999055,
-        "tps": 45.381375412736595,
+        "ttft_seconds": 1.1194053130000157,
+        "tps": 34.502997900791044,
         "generated_tokens": 60,
-        "total_seconds": 1.322128283999973,
-        "answer": "The BZH graphics card is NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz. The BZH VRAM is 12GB."
+        "total_seconds": 1.738979325000173,
+        "answer": "NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz. This is the BZH graphics card and VRAM listed in the context provided."
       },
       "answer_quality": {
         "passes": true,
@@ -663,10 +659,10 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.771637045000034,
-        "tps": 5.655364654536777,
+        "ttft_seconds": 0.8252405410000847,
+        "tps": 5.1618835169097865,
         "generated_tokens": 5,
-        "total_seconds": 0.8841162869999835,
+        "total_seconds": 0.9686386729999867,
         "answer": "240Hz."
       },
       "answer_quality": {
@@ -794,20 +790,18 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.736099782999986,
-        "tps": 65.4288845731598,
-        "generated_tokens": 96,
-        "total_seconds": 1.4672418860000107,
-        "answer": "It supports up to 64GB DDR5-5600, 2x SO-DIMM slots. The memory is compatible with the AORUS MASTER 16 AM6H variant. The memory is DDR5-5600, with 2x SO-DIMM slots. The memory is compatible with the AORUS MASTER 16 AM6H variant. The memory is DDR5-5600, with 2"
+        "ttft_seconds": 0.788382201000104,
+        "tps": 37.55440238902655,
+        "generated_tokens": 46,
+        "total_seconds": 1.2248896820001391,
+        "answer": "It supports up to 64GB DDR5-5600, with two SO-DIMM slots. The memory is compatible across all variants of the AORUS MASTER 16 AM6H product line."
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "token_limit_saturation"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
+        "token_limit_saturation": false,
         "excessive_repetition": false,
         "unsupported_elaboration": false
       }
@@ -934,11 +928,11 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.9205895000000055,
-        "tps": 19.920261078274795,
+        "ttft_seconds": 0.7807980110001154,
+        "tps": 27.939150406566934,
         "generated_tokens": 33,
-        "total_seconds": 1.656604793999918,
-        "answer": "1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD."
+        "total_seconds": 1.1811382780001622,
+        "answer": "1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD。"
       },
       "answer_quality": {
         "passes": true,
@@ -1073,21 +1067,19 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.0488043789999892,
-        "tps": 53.145967014042256,
-        "generated_tokens": 95,
-        "total_seconds": 1.7875298039999734,
-        "answer": "有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5"
+        "ttft_seconds": 0.7764243849999275,
+        "tps": 10.557783440834461,
+        "generated_tokens": 10,
+        "total_seconds": 0.9471685089999937,
+        "answer": "Thunderbolt 5 和 HDMI 都有。"
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "excessive_repetition"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
         "prompt_continuation": false,
         "token_limit_saturation": false,
-        "excessive_repetition": true,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -1209,11 +1201,11 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.805241183000021,
-        "tps": 13.296335550071792,
-        "generated_tokens": 13,
-        "total_seconds": 0.9777129909999758,
-        "answer": "Wi-Fi 7 and Bluetooth 5.4 are listed."
+        "ttft_seconds": 0.7435609320000367,
+        "tps": 20.680399460381985,
+        "generated_tokens": 34,
+        "total_seconds": 1.6440688229999978,
+        "answer": "Wi-Fi 7 and Bluetooth 5.4 are listed for the AORUS MASTER 16 AM6H variant BXH, BYH, BZH."
       },
       "answer_quality": {
         "passes": true,
@@ -1340,20 +1332,18 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.8108340960000078,
-        "tps": 62.042622233214196,
-        "generated_tokens": 96,
-        "total_seconds": 1.5473233809999556,
-        "answer": "是的，所有 AORUS MASTER 16 AM6H 的視訊鏡頭都支援 Windows Hello。例如，AORUS MASTER 16 AM6H 的 BZH、BXH 和 BYH 版本都支援 FHD IR 視訊鏡頭，並提供 Windows Hello 支援。[1] [2] [3] [4] [5] 這些鏡頭都符合 Windows Hello 的要求，可以通過"
+        "ttft_seconds": 0.9345776589998422,
+        "tps": 34.882280202665534,
+        "generated_tokens": 49,
+        "total_seconds": 1.404724682999813,
+        "answer": "視訊鏡頭支援 Windows Hello 嗎？ 答案是：FHD IR camera with Windows Hello support。 這款產品的視訊鏡頭支援 Windows Hello，提供更安全和便利的身份驗證功能。"
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "token_limit_saturation"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
+        "token_limit_saturation": false,
         "excessive_repetition": false,
         "unsupported_elaboration": false
       }
@@ -1475,22 +1465,21 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.766322594999906,
-        "tps": 64.51661351387094,
+        "ttft_seconds": 0.8386711279999872,
+        "tps": 56.01715251745201,
         "generated_tokens": 96,
-        "total_seconds": 1.4879888259999916,
-        "answer": "The battery capacity is 99Wh for all variants of the AORUS MASTER 16 AM6H. The battery capacity is the same across all variants. The battery capacity is 99Wh for all variants of the AORUS MASTER 16 AM6H. The battery capacity is 99Wh for all variants of the AORUS MASTER 16 AM6H. The battery capacity is 99Wh for all variants of the A"
+        "total_seconds": 1.7137607980000666,
+        "answer": "The battery capacity is 99Wh for all variants of the AORUS MASTER 16 AM6H. To provide a concise answer, I'll use one short sentence:\n\nThe battery capacity is 99Wh across all variants of the AORUS MASTER 16 AM6H product.\n\nThis bullet captures both the model name and variant information while keeping it brief:\n[1] product=AORUS MASTER 16 AM6H; field=Battery;"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "token_limit_saturation",
-          "excessive_repetition"
+          "token_limit_saturation"
         ],
         "unexpected_refusal": false,
         "prompt_continuation": false,
         "token_limit_saturation": true,
-        "excessive_repetition": true,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -1605,11 +1594,11 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.7803997620000018,
-        "tps": 61.990802755211945,
-        "generated_tokens": 93,
-        "total_seconds": 1.5002225470000212,
-        "answer": "機身尺寸为357 x 254 x 23-29.9 mm，重量约为2.5 kg。 根据提供的信息，AORUS MASTER 16 AM6H 的机身尺寸和重量分别是 357 x 254 x 23-29.9 mm 和 ~2.5 kg。 请注意，重量值在不同来源中略有差异，但通常在"
+        "ttft_seconds": 0.8667025299998841,
+        "tps": 49.64711801930432,
+        "generated_tokens": 89,
+        "total_seconds": 1.7926518909998777,
+        "answer": "機身尺寸为357 x 254 x 23-29.9 mm，重量约为2.5 kg。 根据提供的信息，AORUS MASTER 16 AM6H的机身体积和质量分别是：长度×宽度×高度=357 x 254 x (约)23-29.9 mm；总重≈2.5 kg。"
       },
       "answer_quality": {
         "passes": true,
@@ -1739,10 +1728,10 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.406000023962406e-06,
-        "tps": 2511773.9650665508,
+        "ttft_seconds": 9.230000159732299e-07,
+        "tps": 2841918.2784955148,
         "generated_tokens": 8,
-        "total_seconds": 3.1849999686528463e-06,
+        "total_seconds": 2.81500001619861e-06,
         "answer": "Insufficient specification context to answer this question."
       },
       "answer_quality": {
@@ -1761,7 +1750,7 @@
     "retrieval_field_hit_rate": 1.0,
     "bilingual_robustness": "Question set includes Traditional Chinese, English, and mixed phrasing.",
     "retrieval_variant_hit_rate": 1.0,
-    "answer_quality_pass_rate": 0.46153846153846156,
+    "answer_quality_pass_rate": 0.8461538461538461,
     "refusal_behavior": "pass"
   }
 }
