@@ -17,11 +17,20 @@ TinyRAG is a uv-managed pure Python RAG assistant for answering grounded questio
 
 ## Setup
 
+For retrieval-only development and mock benchmarks:
+
 ```bash
 uv sync --extra dev
 ```
 
-For real local generation, install an audited llama.cpp runtime in the environment before using `tinyrag ask` with a GGUF model. The code loads `llama_cpp.Llama` dynamically so tests and mock benchmarks do not require the binding.
+For real GGUF generation, install one llama.cpp extra:
+
+```bash
+uv sync --extra llama-cpu      # local CPU
+uv sync --extra llama-cu121    # CUDA 12.1 / Colab GPU
+```
+
+Run real-model commands with the same extra, for example `uv run --extra llama-cpu ...` or `uv run --extra llama-cu121 ...`. The code loads `llama_cpp.Llama` dynamically so tests and mock benchmarks do not require the binding.
 
 The default tests and benchmark path do not require a real local model. They use a deterministic mock streaming backend.
 
@@ -31,9 +40,11 @@ Open the notebook directly in Colab:
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/cxyfer/tinyrag-laptop-assistant/blob/main/notebooks/tinyrag_colab_cuda.ipynb)
 
-Set **Runtime > Change runtime type > GPU**, then run the notebook cells. The notebook clones this repository, installs the CUDA llama.cpp wheel through `uv`, downloads the Qwen2.5 1.5B Q4_K_M GGUF model, rebuilds the local index from the cached source, and runs a grounded answer with GPU offload.
+Set **Runtime > Change runtime type > GPU**, then run the notebook cells. The notebook clones this repository, installs the CUDA llama.cpp wheel through `uv`, downloads the configured GGUF model, rebuilds the local index from the cached source, and runs a grounded answer with GPU offload.
 
-Equivalent Colab shell flow:
+The notebook defines `MODEL_REPO`, `MODEL_FILE`, `MODEL_PATH`, `N_CTX`, and `N_GPU_LAYERS` near the top. To switch models, change those values together and keep context length plus GPU layers conservative until VRAM usage is confirmed.
+
+Equivalent Colab shell flow with the default Qwen2.5 model:
 
 ```bash
 nvidia-smi
@@ -41,21 +52,21 @@ git clone --branch main https://github.com/cxyfer/tinyrag-laptop-assistant.git
 cd tinyrag-laptop-assistant
 python -m pip install -q uv
 uv sync --frozen --extra llama-cu121
-uvx --from huggingface-hub hf download \
-  Qwen/Qwen2.5-1.5B-Instruct-GGUF \
-  qwen2.5-1.5b-instruct-q4_k_m.gguf \
-  --local-dir models
+MODEL_REPO=Qwen/Qwen2.5-1.5B-Instruct-GGUF
+MODEL_FILE=qwen2.5-1.5b-instruct-q4_k_m.gguf
+MODEL_PATH=models/$MODEL_FILE
+uvx --from huggingface-hub hf download "$MODEL_REPO" "$MODEL_FILE" --local-dir models
 uv run --frozen --extra llama-cu121 tinyrag ingest --prefer-cache
 uv run --frozen --extra llama-cu121 tinyrag build-index
 uv run --frozen --extra llama-cu121 tinyrag ask "BXH 使用哪一張顯示卡？" \
-  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --model-path "$MODEL_PATH" \
   --n-ctx 2048 \
   --temperature 0.1 \
   --max-tokens 256 \
   --n-gpu-layers 35
 ```
 
-`--n-gpu-layers 35` fully offloaded Qwen2.5 1.5B Q4_K_M on a Colab Tesla T4 during validation. Reduce it if your runtime reports lower VRAM.
+`--n-gpu-layers 35` fully offloaded Qwen2.5 1.5B Q4_K_M on a Colab Tesla T4 during validation. Reduce it if your runtime reports lower VRAM. Unauthenticated Hugging Face downloads work for the demo, but setting `HF_TOKEN` can avoid rate limits.
 
 ## Local CPU Development
 
@@ -67,11 +78,21 @@ uv run tinyrag build-index
 uv run tinyrag benchmark
 ```
 
-Ask with a real model after placing a GGUF file under `models/`:
+For real CPU generation, install the CPU extra and download the default GGUF model:
 
 ```bash
-uv run tinyrag ask "BXH 使用哪一張顯示卡？" \
-  --model-path models/qwen3.5-2b-q4_k_m.gguf \
+uv sync --extra llama-cpu
+uvx --from huggingface-hub hf download \
+  Qwen/Qwen2.5-1.5B-Instruct-GGUF \
+  qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --local-dir models
+```
+
+Ask with the downloaded model:
+
+```bash
+uv run --extra llama-cpu tinyrag ask "BXH 使用哪一張顯示卡？" \
+  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
   --n-ctx 2048 \
   --temperature 0.1 \
   --max-tokens 256 \
@@ -100,6 +121,16 @@ Practical settings:
 - Start with `--n-gpu-layers 0` for CPU validation, then gradually increase GPU offload layers during CUDA testing.
 - Treat Qwen3.5 GGUF files as community quantizations of official Qwen3.5 weights unless the model repository is published by the Qwen organization.
 
+To switch models in Colab or local commands, change the Hugging Face repository, GGUF filename, `--model-path`, `--n-ctx`, and `--n-gpu-layers` together. Example variables:
+
+```bash
+MODEL_REPO=Qwen/Qwen2.5-1.5B-Instruct-GGUF
+MODEL_FILE=qwen2.5-1.5b-instruct-q4_k_m.gguf
+MODEL_PATH=models/$MODEL_FILE
+```
+
+Then download the selected file and pass `"$MODEL_PATH"` to `tinyrag ask` or `tinyrag benchmark --use-model`.
+
 vLLM is not the default because its strengths are batching and server throughput on larger GPUs. For this assignment, llama.cpp provides lower operational complexity and finer-grained low-VRAM control. Larger models such as Qwen3.5-4B/9B or Gemma 4 E4B/12B can be evaluated later, but they are not recommended as 4GB defaults.
 
 ## Data and Artifacts
@@ -110,7 +141,7 @@ vLLM is not the default because its strengths are batching and server throughput
 - `data/index/metadata.json`: chunk metadata.
 - `data/benchmarks/benchmark_results.json`: structured benchmark output.
 - `data/benchmarks/benchmark_summary.md`: Markdown-friendly qualitative summary.
-- `models/`: local GGUF model placement.
+- `models/`: local GGUF model placement. GGUF files are ignored by git and should be downloaded locally or in Colab.
 
 ## CLI
 
@@ -140,10 +171,11 @@ Builds field-level chunks, GPU comparison chunks, hash-based multilingual CPU em
 ### Ask
 
 ```bash
-uv run tinyrag ask "What GPU does the BXH variant use?" --model-path models/model.gguf
+uv run --extra llama-cpu tinyrag ask "What GPU does the BXH variant use?" \
+  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf
 ```
 
-Retrieves relevant chunks, assembles a grounded prompt, streams a llama.cpp-compatible answer, and prints TTFT/TPS metrics. A real GGUF model and `llama-cpp-python` are required for this command unless tests inject a mock backend.
+Retrieves relevant chunks, assembles a grounded prompt, streams a llama.cpp-compatible answer, and prints TTFT/TPS metrics. A real GGUF model and matching `llama-cpu` or `llama-cu121` extra are required for this command unless tests inject a mock backend.
 
 ### Benchmark
 
@@ -161,35 +193,26 @@ Each question records:
 - Generation metrics: TTFT, TPS, generated token count, total generation time, and answer text.
 - A qualitative summary covering groundedness, exactness, bilingual robustness, variant awareness, and refusal behavior.
 
-Current local placeholder results are produced by the mock backend and are intended to validate pipeline correctness rather than real model speed. Real TTFT/TPS should be measured after placing a GGUF model under `models/` and running:
+Current local placeholder results are produced by the mock backend and are intended to validate pipeline correctness rather than real model speed. Real TTFT/TPS should be measured with the matching llama.cpp extra and a downloaded GGUF model:
 
 ```bash
-uv run tinyrag benchmark --use-model --model-path models/<model>.gguf
-```
-
-Suggested real-model benchmark order:
-
-```bash
-uv run tinyrag benchmark --use-model \
+uv run --extra llama-cpu tinyrag benchmark --use-model \
   --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
   --n-ctx 2048 \
   --temperature 0.1 \
   --max-tokens 256 \
   --n-gpu-layers 0
+```
 
-uv run tinyrag benchmark --use-model \
-  --model-path models/qwen3.5-2b-q4_k_m.gguf \
+For Colab GPU, use the CUDA extra and the same model variables from the notebook:
+
+```bash
+uv run --frozen --extra llama-cu121 tinyrag benchmark --use-model \
+  --model-path "$MODEL_PATH" \
   --n-ctx 2048 \
   --temperature 0.1 \
   --max-tokens 256 \
-  --n-gpu-layers 0
-
-uv run tinyrag benchmark --use-model \
-  --model-path models/gemma-4-e2b-it-q4.gguf \
-  --n-ctx 1024 \
-  --temperature 0.1 \
-  --max-tokens 256 \
-  --n-gpu-layers 0
+  --n-gpu-layers 35
 ```
 
 ## Verification
