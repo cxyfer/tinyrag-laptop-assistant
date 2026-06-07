@@ -13,7 +13,7 @@ TinyRAG is a uv-managed pure Python RAG assistant for answering grounded questio
 - Hybrid retrieval combining dense similarity, keyword matches, field aliases, and variant boosts.
 - Traditional Chinese, English, and mixed-language benchmark questions.
 - llama.cpp-compatible streaming generation settings for model path, context length, temperature, max tokens, and GPU offload layers.
-- Benchmark output with retrieved evidence, TTFT, TPS, generated token count, total generation time, answer text, and README-ready Markdown summary.
+- Benchmark output with retrieved evidence, TTFT, TPS, generated token count, total generation time, answer text, answer-quality checks, and README-ready Markdown summary.
 
 ## Setup
 
@@ -183,7 +183,7 @@ Retrieves relevant chunks, assembles a grounded prompt, streams a llama.cpp-comp
 uv run tinyrag benchmark
 ```
 
-Runs fixed questions covering CPU, GPU variants, display, memory, storage, ports, communication, webcam, battery, dimensions, and mixed Traditional Chinese / English phrasing. By default it uses a mock echo backend so benchmark schema and retrieval evidence are testable without a local model. Use `--use-model` to benchmark real llama.cpp generation.
+Runs fixed questions covering CPU, GPU variants, display, memory, storage, ports, communication, webcam, battery, dimensions, and mixed Traditional Chinese / English phrasing. By default it uses a mock echo backend so benchmark schema, retrieval evidence, and answer-quality checks are testable without a local model. Use `--use-model` to benchmark real llama.cpp generation. Benchmark generation defaults to a concise token budget; pass `--max-tokens` only when intentionally testing longer answers.
 
 ## Benchmark Methodology
 
@@ -191,16 +191,17 @@ Each question records:
 
 - Retrieved chunks, scores, dense scores, boost scores, field, variant, aliases, value, and source URL.
 - Generation metrics: TTFT, TPS, generated token count, total generation time, and answer text.
-- A qualitative summary covering groundedness, exactness, bilingual robustness, variant awareness, and refusal behavior.
+- Answer-quality checks for unexpected refusal text, prompt continuation, token-limit saturation, repetition, and unsupported elaboration.
+- A summary covering retrieval field hits, retrieval variant hits, bilingual robustness, answer quality, and refusal behavior.
 
-Current local placeholder results are produced by the mock backend and are intended to validate pipeline correctness rather than real model speed. Real TTFT/TPS should be measured with the matching llama.cpp extra and a downloaded GGUF model:
+The committed benchmark artifacts preserve a pre-fix Colab real-model baseline and include post-change answer-quality diagnostics. Local mock benchmark runs validate pipeline correctness rather than real model speed. Fresh post-change TTFT/TPS should be measured with the matching llama.cpp extra and a downloaded GGUF model:
 
 ```bash
 uv run --extra llama-cpu tinyrag benchmark --use-model \
   --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
   --n-ctx 2048 \
   --temperature 0.1 \
-  --max-tokens 256 \
+  --max-tokens 96 \
   --n-gpu-layers 0
 ```
 
@@ -211,7 +212,7 @@ uv run --frozen --extra llama-cu121 tinyrag benchmark --use-model \
   --model-path "$MODEL_PATH" \
   --n-ctx 2048 \
   --temperature 0.1 \
-  --max-tokens 256 \
+  --max-tokens 96 \
   --n-gpu-layers 35
 ```
 
