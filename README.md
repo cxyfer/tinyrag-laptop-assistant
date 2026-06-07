@@ -42,9 +42,9 @@ Open the notebook directly in Colab:
 
 Set **Runtime > Change runtime type > GPU**, then run the notebook cells. The notebook clones this repository, installs the CUDA llama.cpp wheel through `uv`, downloads the configured GGUF model, rebuilds the local index from the cached source, and runs a grounded answer with GPU offload.
 
-The notebook defines `MODEL_REPO`, `MODEL_FILE`, `MODEL_PATH`, `N_CTX`, and `N_GPU_LAYERS` near the top. To switch models, change those values together and keep context length plus GPU layers conservative until VRAM usage is confirmed.
+The notebook defines `MODEL_REPO`, `MODEL_FILE`, `MODEL_PATH`, `N_CTX`, and `N_GPU_LAYERS` near the top. It also keeps the previous Qwen2.5-1.5B baseline and Gemma 4 E2B candidate commented out for quick switching. To switch models, change those values together and keep context length plus GPU layers conservative until VRAM usage is confirmed.
 
-Equivalent Colab shell flow with the default Qwen2.5 model:
+Equivalent Colab shell flow with the default Qwen3.5 2B model:
 
 ```bash
 nvidia-smi
@@ -52,8 +52,8 @@ git clone --branch main https://github.com/cxyfer/tinyrag-laptop-assistant.git
 cd tinyrag-laptop-assistant
 python -m pip install -q uv
 uv sync --frozen --extra llama-cu121
-MODEL_REPO=Qwen/Qwen2.5-1.5B-Instruct-GGUF
-MODEL_FILE=qwen2.5-1.5b-instruct-q4_k_m.gguf
+MODEL_REPO=bartowski/Qwen_Qwen3.5-2B-GGUF
+MODEL_FILE=Qwen_Qwen3.5-2B-Q4_K_M.gguf
 MODEL_PATH=models/$MODEL_FILE
 uvx --from huggingface-hub hf download "$MODEL_REPO" "$MODEL_FILE" --local-dir models
 uv run --frozen --extra llama-cu121 tinyrag ingest --prefer-cache
@@ -68,7 +68,7 @@ uv run --frozen --extra llama-cu121 tinyrag ask "BXH 使用哪一張顯示卡？
   --n-gpu-layers 35
 ```
 
-`--n-gpu-layers 35` fully offloaded Qwen2.5 1.5B Q4_K_M on a Colab Tesla T4 during validation. Reduce it if your runtime reports lower VRAM. Unauthenticated Hugging Face downloads work for the demo, but setting `HF_TOKEN` can avoid rate limits.
+`--n-gpu-layers 35` is the Colab starting point for the notebook. It fully offloaded the previous Qwen2.5 1.5B Q4_K_M default on a Colab Tesla T4 during validation; reduce it if your runtime reports lower VRAM or the new Qwen3.5 2B default needs more headroom. Unauthenticated Hugging Face downloads work for the demo, but setting `HF_TOKEN` can avoid rate limits.
 
 ## Local CPU Development
 
@@ -85,8 +85,8 @@ For real CPU generation, install the CPU extra and download the default GGUF mod
 ```bash
 uv sync --extra llama-cpu
 uvx --from huggingface-hub hf download \
-  Qwen/Qwen2.5-1.5B-Instruct-GGUF \
-  qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  bartowski/Qwen_Qwen3.5-2B-GGUF \
+  Qwen_Qwen3.5-2B-Q4_K_M.gguf \
   --local-dir models
 ```
 
@@ -94,7 +94,7 @@ Ask with the downloaded model:
 
 ```bash
 uv run --extra llama-cpu tinyrag ask "BXH 使用哪一張顯示卡？" \
-  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --model-path models/Qwen_Qwen3.5-2B-Q4_K_M.gguf \
   --n-ctx 2048 \
   --temperature 0.3 \
   --max-tokens 256 \
@@ -128,8 +128,8 @@ Practical settings:
 To switch models in Colab or local commands, change the Hugging Face repository, GGUF filename, `--model-path`, `--n-ctx`, and `--n-gpu-layers` together. Example variables:
 
 ```bash
-MODEL_REPO=Qwen/Qwen2.5-1.5B-Instruct-GGUF
-MODEL_FILE=qwen2.5-1.5b-instruct-q4_k_m.gguf
+MODEL_REPO=bartowski/Qwen_Qwen3.5-2B-GGUF
+MODEL_FILE=Qwen_Qwen3.5-2B-Q4_K_M.gguf
 MODEL_PATH=models/$MODEL_FILE
 ```
 
@@ -176,7 +176,7 @@ Builds field-level chunks, GPU comparison chunks, hash-based multilingual CPU em
 
 ```bash
 uv run --extra llama-cpu tinyrag ask "What GPU does the BXH variant use?" \
-  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf
+  --model-path models/Qwen_Qwen3.5-2B-Q4_K_M.gguf
 ```
 
 Retrieves relevant chunks, assembles a grounded prompt, streams a llama.cpp-compatible answer, and prints TTFT/TPS metrics. A real GGUF model and matching `llama-cpu` or `llama-cu121` extra are required for this command unless tests inject a mock backend.
@@ -202,7 +202,7 @@ The committed benchmark artifacts preserve a pre-fix Colab real-model baseline a
 
 ```bash
 uv run --extra llama-cpu tinyrag benchmark --use-model \
-  --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
+  --model-path models/Qwen_Qwen3.5-2B-Q4_K_M.gguf \
   --n-ctx 2048 \
   --temperature 0.3 \
   --max-tokens 96 \
