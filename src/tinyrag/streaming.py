@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 import time
-from collections.abc import Iterable, Iterator
+from collections.abc import Callable, Iterable, Iterator
 
 from tinyrag.models import GenerationMetrics
 
 
-def measure_stream(chunks: Iterable[str], token_counter) -> Iterator[str | GenerationMetrics]:
+def measure_stream(
+    chunks: Iterable[str],
+    token_counter,
+    answer_transform: Callable[[str], str] | None = None,
+) -> Iterator[str | GenerationMetrics]:
     start = time.perf_counter()
     first_token_time: float | None = None
     answer_parts: list[str] = []
@@ -19,6 +23,8 @@ def measure_stream(chunks: Iterable[str], token_counter) -> Iterator[str | Gener
         yield chunk
     end = time.perf_counter()
     answer = "".join(answer_parts)
+    if answer_transform is not None:
+        answer = answer_transform(answer)
     total_seconds = max(end - start, 0.0)
     generated_tokens = token_counter(answer)
     yield GenerationMetrics(

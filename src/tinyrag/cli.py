@@ -14,7 +14,7 @@ from tinyrag.config import (
     DEFAULT_VECTORS_PATH,
     ensure_data_dirs,
 )
-from tinyrag.evaluation import run_benchmark
+from tinyrag.evaluation import BENCHMARK_MODEL_MAX_TOKENS, run_benchmark
 from tinyrag.generation import GenerationMetrics, LlamaCppConfig, stream_answer
 from tinyrag.indexing import VectorIndex, build_vector_index
 from tinyrag.ingestion import ingest_specs
@@ -96,7 +96,7 @@ def benchmark(
     model_path: Path = typer.Option(Path("models/model.gguf"), help="GGUF model path."),
     n_ctx: int = typer.Option(2048, help="llama.cpp context length."),
     temperature: float = typer.Option(0.1, help="Generation temperature."),
-    max_tokens: int = typer.Option(256, help="Maximum generated tokens."),
+    max_tokens: int = typer.Option(BENCHMARK_MODEL_MAX_TOKENS, help="Maximum generated tokens."),
     n_gpu_layers: int = typer.Option(0, help="llama.cpp GPU offload layers."),
     use_model: bool = typer.Option(False, help="Use real llama.cpp backend instead of mock echo."),
 ) -> None:

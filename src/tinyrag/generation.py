@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 from collections.abc import Iterable, Iterator
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Protocol
 
@@ -10,6 +10,17 @@ from tinyrag.models import GenerationMetrics, RetrievedChunk
 from tinyrag.prompting import INSUFFICIENT_CONTEXT_ANSWER, build_prompt
 from tinyrag.retrieval import has_sufficient_context
 from tinyrag.streaming import measure_stream
+
+DEFAULT_STOP_SEQUENCES = (
+    "\nQuestion:",
+    "\nAnswer:",
+    "\nFinal answer:",
+    "\n\nQuestion:",
+    "\n\nAnswer:",
+    "\n\nFinal answer:",
+)
+PROMPT_CONTINUATION_RE = re.compile(r"\n\s*(?:Question|Answer|Final answer):", re.IGNORECASE)
+LEADING_ANSWER_LABEL_RE = re.compile(r"^\s*(?:Answer|Final answer):\s*", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -19,6 +30,7 @@ class LlamaCppConfig:
     temperature: float = 0.1
     max_tokens: int = 256
     n_gpu_layers: int = 0
+    stop_sequences: tuple[str, ...] = field(default_factory=lambda: DEFAULT_STOP_SEQUENCES)
 
 
 class StreamingBackend(Protocol):
@@ -56,6 +68,7 @@ class LlamaCppBackend:
             prompt,
             max_tokens=config.max_tokens,
             temperature=config.temperature,
+            stop=list(config.stop_sequences) or None,
             stream=True,
             echo=False,
         )
@@ -73,6 +86,22 @@ class LlamaCppBackend:
 def fallback_token_count(text: str) -> int:
     tokens = re.findall(r"[A-Za-z0-9]+|[^\sA-Za-z0-9]", text)
     return len(tokens)
+
+
+def normalize_generated_answer(answer: str) -> str:
+    text = LEADING_ANSWER_LABEL_RE.sub("", answer.strip(), count=1).strip()
+    if not text:
+        return ""
+
+    continuation = PROMPT_CONTINUATION_RE.search(text)
+    if continuation:
+        text = text[: continuation.start()].strip()
+
+    if INSUFFICIENT_CONTEXT_ANSWER in text and text != INSUFFICIENT_CONTEXT_ANSWER:
+        answer_before_refusal = text.split(INSUFFICIENT_CONTEXT_ANSWER, 1)[0].strip()
+        return answer_before_refusal or INSUFFICIENT_CONTEXT_ANSWER
+
+    return text
 
 
 class ContextEchoBackend:
@@ -103,7 +132,7 @@ def stream_answer(
         chunks = [INSUFFICIENT_CONTEXT_ANSWER]
     else:
         chunks = selected_backend.stream(prompt, config)
-    yield from measure_stream(chunks, selected_backend.count_tokens)
+    yield from measure_stream(chunks, selected_backend.count_tokens, answer_transform=normalize_generated_answer)
 
 
 def generate_answer(
