@@ -7,7 +7,7 @@ from tinyrag.indexing import build_vector_index
 from tinyrag.parsing import parse_spec_html
 from tinyrag.retrieval import search
 
-FIXTURE_HTML = Path("/home/usaya/workspace/interview/tinyrag-laptop-assistant/data/raw/am6h_spec.html").read_text(encoding="utf-8")
+FIXTURE_HTML = (Path(__file__).resolve().parents[1] / "data/raw/am6h_spec.html").read_text(encoding="utf-8")
 
 
 def _index():

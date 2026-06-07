@@ -7,7 +7,7 @@ from tinyrag.generation import LlamaCppConfig
 from tinyrag.indexing import build_vector_index
 from tinyrag.parsing import parse_spec_html
 
-FIXTURE_HTML = Path("/home/usaya/workspace/interview/tinyrag-laptop-assistant/data/raw/am6h_spec.html").read_text(encoding="utf-8")
+FIXTURE_HTML = (Path(__file__).resolve().parents[1] / "data/raw/am6h_spec.html").read_text(encoding="utf-8")
 
 
 def test_benchmark_result_schema_and_summary(tmp_path: Path) -> None:

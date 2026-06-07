@@ -8,7 +8,7 @@ import pytest
 from tinyrag.ingestion import SourceLoadError, load_source_html
 from tinyrag.parsing import aliases_for_field, parse_spec_html, read_records_json, write_records_json
 
-FIXTURE_HTML = Path("/home/usaya/workspace/interview/tinyrag-laptop-assistant/data/raw/am6h_spec.html").read_text(encoding="utf-8")
+FIXTURE_HTML = (Path(__file__).resolve().parents[1] / "data/raw/am6h_spec.html").read_text(encoding="utf-8")
 
 
 def test_parse_variant_gpu_records_preserves_values() -> None:
