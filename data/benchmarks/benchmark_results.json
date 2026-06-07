@@ -113,23 +113,21 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.2033854850000125,
-        "tps": 80.29381806440297,
-        "generated_tokens": 256,
-        "total_seconds": 3.1882902840000042,
-        "answer": " 根据提供的信息，AORUS MASTER 16 AM6H 的 CPU 标准规格是 Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz。这台电脑支持 Windows Hello 和 FHD IR camera。此外，它还配备了一块 NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz。这些规格表明这台电脑具有强大的多核心处理器和高性能图形处理能力。Insufficient specification context to answer this question. 由于提供的信息中没有明确指出 CPU 的型号和规格，因此无法确定这台 AM6H 的 CPU 标准规格。Insufficient specification context to answer this question. 由于提供的信息中没有明确指出 CPU 的型号和规格，因此无法确定这台 AM6H 的 CPU 标准规格。Insufficient specification context to answer this question. 由于提供的信息中没有明确指出 CPU 的型号和规格，因此无法确定这台 AM6H 的 CPU 标准规格。Insufficient specification context to answer this question"
+        "ttft_seconds": 1.1797680659999514,
+        "tps": 49.555058064413636,
+        "generated_tokens": 96,
+        "total_seconds": 1.9372391789999597,
+        "answer": "這台 AM6H 的 CPU 規格是 Intel® Core™ Ultra 9 Processor 275HX, 24 cores / 24 threads, up to 5.4 GHz。 這款 CPU 有 24 處核心和 24 處線程，最高可達 5.4 GHz。 這款 CPU 有 24 處核心和 24 處"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "unexpected_refusal",
-          "token_limit_saturation",
-          "excessive_repetition"
+          "token_limit_saturation"
         ],
-        "unexpected_refusal": true,
+        "unexpected_refusal": false,
         "prompt_continuation": false,
         "token_limit_saturation": true,
-        "excessive_repetition": true,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -254,23 +252,22 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.089317532999985,
-        "tps": 84.7452595368863,
-        "generated_tokens": 256,
-        "total_seconds": 3.020817935999986,
-        "answer": " The BXH variant of the AORUS MASTER 16 AM6H uses the NVIDIA® GeForce RTX™ 5090 Laptop GPU 24GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1797 MHz. This GPU is part of the 5090 series and provides 24GB of GDDR7 memory with 175W maximum graphics power and dynamic boost. Additionally, it has an AI Boost clock speed of 1797 MHz. The GPU is designed for 175W maximum graphics power with dynamic boost, which means it can boost its clock speed based on the workload. The GPU also has 140W maximum graphics power with dynamic boost for the BZH variant. The 5090 series is part of the RTX 5000 series and is known for its high performance and efficiency. The 5090 series is designed to deliver high performance in a compact form factor, making it ideal for laptops and other portable devices. The 5090 series is also known for its AI Boost feature, which allows the GPU to dynamically adjust its clock speed based on the workload, improving performance and"
+        "ttft_seconds": 0.914153156999987,
+        "tps": 58.72987850279588,
+        "generated_tokens": 96,
+        "total_seconds": 1.6346023940000123,
+        "answer": "The BXH variant of the AORUS MASTER 16 AM6H uses the NVIDIA® GeForce RTX™ 5090 Laptop GPU 24GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1797 MHz. The BYH variant uses the NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "token_limit_saturation",
-          "unsupported_elaboration"
+          "token_limit_saturation"
         ],
         "unexpected_refusal": false,
         "prompt_continuation": false,
         "token_limit_saturation": true,
         "excessive_repetition": false,
-        "unsupported_elaboration": true
+        "unsupported_elaboration": false
       }
     },
     {
@@ -395,23 +392,22 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.8081331139999861,
-        "tps": 78.69945323489283,
-        "generated_tokens": 156,
-        "total_seconds": 1.9822246989999996,
-        "answer": " BYH 使用 NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz。這張顯示卡具有 16GB 的記憶體容量，支援 175W 的最大圖形功率，並支援動態加速和智能加速技術。它還支援 DCI-P3 100% 的色域，並提供 Dolby Vision 和 NVIDIA G-SYNC 技術。此外，它還支援 Advanced Optimus 技術，以實現更佳的效能和效能。這張顯示卡的效能和效能都相當出色，適合需要高畫質顯示和效能的使用者。"
+        "ttft_seconds": 0.7937540940000076,
+        "tps": 63.23045963467961,
+        "generated_tokens": 96,
+        "total_seconds": 1.5182556089999935,
+        "answer": "BYH 使用 NVIDIA® GeForce RTX™ 5080 Laptop GPU 16GB GDDR7, 175W Maximum Graphics Power with Dynamic Boost, AI Boost 1902 MHz。 This GPU is part of the 16-inch 16:10 OLED WQXGA 2560x1600, 240Hz, 1ms, DCI-P3 100%,"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "token_limit_saturation",
-          "unsupported_elaboration"
+          "token_limit_saturation"
         ],
         "unexpected_refusal": false,
         "prompt_continuation": false,
         "token_limit_saturation": true,
         "excessive_repetition": false,
-        "unsupported_elaboration": true
+        "unsupported_elaboration": false
       }
     },
     {
@@ -535,23 +531,19 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.798632442000013,
-        "tps": 93.52983774927542,
-        "generated_tokens": 256,
-        "total_seconds": 2.7370944519999796,
-        "answer": " The BZH graphics card variant of the AORUS MASTER 16 AM6H product is equipped with the NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz. This variant also includes 2x SO-DIMM slots for up to 64GB DDR5-5600 memory. The VRAM capacity for this variant is 12GB. \n\nThe BZH variant is the only GPU variant listed in the provided context. It does not have a GPU variant listed for VRAM capacity. Therefore, the VRAM capacity for the BZH variant is not specified in the given information. Insufficient specification context to answer this question. \n\nThe question asks for the BZH graphics card and VRAM, but the VRAM capacity is not specified for the BZH variant. Therefore, the VRAM capacity for the BZH variant is not specified in the given information. Insufficient specification context to answer this question. \n\nThe VRAM capacity for the BZH variant is not specified in the given information. Insufficient specification context to answer this question. \n\nThe VRAM capacity for the BZH"
+        "ttft_seconds": 0.7985005239999055,
+        "tps": 45.381375412736595,
+        "generated_tokens": 60,
+        "total_seconds": 1.322128283999973,
+        "answer": "The BZH graphics card is NVIDIA® GeForce RTX™ 5070 Ti Laptop GPU 12GB GDDR7, 140W Maximum Graphics Power with Dynamic Boost, AI Boost 1962 MHz. The BZH VRAM is 12GB."
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "unexpected_refusal",
-          "token_limit_saturation",
-          "excessive_repetition"
-        ],
-        "unexpected_refusal": true,
+        "passes": true,
+        "issues": [],
+        "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
-        "excessive_repetition": true,
+        "token_limit_saturation": false,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -671,21 +663,18 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.7987737889999948,
-        "tps": 91.92311925466869,
-        "generated_tokens": 256,
-        "total_seconds": 2.78493595599997,
-        "answer": " 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 240Hz\n\nQuestion: AM6H 螢幕 display refresh rate 是多少？\nAnswer: 24"
+        "ttft_seconds": 0.771637045000034,
+        "tps": 5.655364654536777,
+        "generated_tokens": 5,
+        "total_seconds": 0.8841162869999835,
+        "answer": "240Hz."
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "prompt_continuation",
-          "token_limit_saturation"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
-        "prompt_continuation": true,
-        "token_limit_saturation": true,
+        "prompt_continuation": false,
+        "token_limit_saturation": false,
         "excessive_repetition": false,
         "unsupported_elaboration": false
       }
@@ -805,22 +794,21 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.8128255529999819,
-        "tps": 90.42412433436127,
-        "generated_tokens": 256,
-        "total_seconds": 2.8311028929999793,
-        "answer": " The AORUS MASTER 16 AM6H supports up to 64GB DDR5-5600, 2x SO-DIMM slots. The memory type is DDR5-5600, and it has 2x SO-DIMM slots. The memory capacity is up to 64GB. The source for this information is Gigabyte's website. The battery capacity is 99Wh. The product variant is either BZH or BXH. The product variant is either BYH or BXH. The product variant is either BZH or BYH. The product variant is either BZH or BXH. The product variant is either BYH or BXH. The product variant is either BZH or BYH. The product variant is either BZH or BXH. The product variant is either BYH or BXH. The product variant is either BZH or BYH. The product variant is either BZH or BXH. The product variant is either BYH or BXH. The product variant is either BZH or BYH. The product variant is either BZH or BXH. The product variant is either BYH or BXH. The product variant is either BZH or BYH. The"
+        "ttft_seconds": 0.736099782999986,
+        "tps": 65.4288845731598,
+        "generated_tokens": 96,
+        "total_seconds": 1.4672418860000107,
+        "answer": "It supports up to 64GB DDR5-5600, 2x SO-DIMM slots. The memory is compatible with the AORUS MASTER 16 AM6H variant. The memory is DDR5-5600, with 2x SO-DIMM slots. The memory is compatible with the AORUS MASTER 16 AM6H variant. The memory is DDR5-5600, with 2"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "token_limit_saturation",
-          "excessive_repetition"
+          "token_limit_saturation"
         ],
         "unexpected_refusal": false,
         "prompt_continuation": false,
         "token_limit_saturation": true,
-        "excessive_repetition": true,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -946,21 +934,18 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.011117124000009,
-        "tps": 74.29120677341804,
-        "generated_tokens": 169,
-        "total_seconds": 2.2748318049999625,
-        "answer": " 根據提供的資訊，AORUS MASTER 16 AM6H 產品的儲存空間和 M.2 插槽規格如下：\n\n- 儲存空間：1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD\n- M.2 插槽：1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD\n\n這款產品提供最高達 4TB 的 PCIe NVMe SSD，並且支援 PCIe Gen5 和 PCIe Gen4x4 插槽。這些規格適用於儲存空間和 M.2 插槽。 Insufficient specification context to answer this question."
+        "ttft_seconds": 0.9205895000000055,
+        "tps": 19.920261078274795,
+        "generated_tokens": 33,
+        "total_seconds": 1.656604793999918,
+        "answer": "1x PCIe Gen5 M.2 slot + 1x PCIe Gen4x4 M.2 slot, up to 4TB PCIe NVMe SSD."
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "unexpected_refusal",
-          "token_limit_saturation"
-        ],
-        "unexpected_refusal": true,
+        "passes": true,
+        "issues": [],
+        "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
+        "token_limit_saturation": false,
         "excessive_repetition": false,
         "unsupported_elaboration": false
       }
@@ -1088,24 +1073,22 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.7722173079999948,
-        "tps": 94.3220379562336,
-        "generated_tokens": 256,
-        "total_seconds": 2.714105902999961,
-        "answer": " 有 Thunderbolt 5 和 HDMI。根据提供的信息，AORUS MASTER 16 AM6H 有 Thunderbolt 5 和 HDMI 2.1 等多种端口。Thunderbolt 5 是一种高速数据传输接口，支持高达 40 Gbps 的数据传输速率，而 HDMI 2.1 是一种支持 4K UHD 和 8K UHD 的高清显示接口。这些端口都支持 1080p@60Hz 的显示分辨率。此外，它还支持 2x USB-A 3.2 Gen2、RJ-45、MicroSD UHS-II、音频组合插孔等。这些端口和通信功能都支持最新的技术标准，以满足现代用户的需求。这些端口和通信功能都支持最新的技术标准，以满足现代用户的需求。这些端口和通信功能都支持最新的技术标准，以满足现代用户的需求。这些端口和通信功能都支持最新的技术标准，以满足现代用户的需求。这些端口和通信功能都支持最新的技术标准，以满足现代用户的需求。这些端口和通信功能都支持最新的技术标准，以满足现代用户的需求。这些端口和"
+        "ttft_seconds": 1.0488043789999892,
+        "tps": 53.145967014042256,
+        "generated_tokens": 95,
+        "total_seconds": 1.7875298039999734,
+        "answer": "有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5 和 HDMI。 有 Thunderbolt 5"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "token_limit_saturation",
-          "excessive_repetition",
-          "unsupported_elaboration"
+          "excessive_repetition"
         ],
         "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
+        "token_limit_saturation": false,
         "excessive_repetition": true,
-        "unsupported_elaboration": true
+        "unsupported_elaboration": false
       }
     },
     {
@@ -1226,22 +1209,19 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.724295799999993,
-        "tps": 95.24423027046299,
-        "generated_tokens": 256,
-        "total_seconds": 2.687826856000015,
-        "answer": " Wi-Fi 7 and Bluetooth 5.4 are listed. The context provides information for two variants of the AORUS MASTER 16 AM6H product, both with the same communication specifications. The Wi-Fi version is listed as Wi-Fi 7 and Bluetooth version as Bluetooth 5.4. The source for this information is Gigabyte's website. The battery capacity is also provided for both variants, with 99Wh for both. The question asks for Wi-Fi and Bluetooth versions, and the answer is that both are listed as Wi-Fi 7 and Bluetooth 5.4. The answer is clear and concise, providing the Wi-Fi and Bluetooth versions that are listed. The answer is: Wi-Fi 7 and Bluetooth 5.4. The question is in English, so the answer is in English. The answer is: Wi-Fi 7 and Bluetooth 5.4. The answer is: Wi-Fi 7 and Bluetooth 5.4. The answer is: Wi-Fi 7 and Bluetooth 5.4. The answer is: Wi-Fi 7 and Bluetooth 5.4. The answer is: Wi-Fi 7 and Bluetooth 5.4. The answer is: Wi-Fi 7 and Bluetooth 5.4"
+        "ttft_seconds": 0.805241183000021,
+        "tps": 13.296335550071792,
+        "generated_tokens": 13,
+        "total_seconds": 0.9777129909999758,
+        "answer": "Wi-Fi 7 and Bluetooth 5.4 are listed."
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "token_limit_saturation",
-          "excessive_repetition"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
-        "excessive_repetition": true,
+        "token_limit_saturation": false,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -1360,22 +1340,21 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 0.7603396729999758,
-        "tps": 93.4025830153783,
-        "generated_tokens": 256,
-        "total_seconds": 2.7408235589999776,
-        "answer": " 是的，所有 AORUS MASTER 16 AM6H 的視訊鏡頭都支援 Windows Hello。這些鏡頭提供 FHD IR 相機，並且有 Windows Hello 支援。這些鏡頭的源來源是 Gigabyte.com。這些鏡頭的變異種類包括 BZH、BXH 和 BYH。這些鏡頭的場域是 Webcam，值是 FHD IR camera with Windows Hello support。這些鏡頭的產品是 AORUS MASTER 16 AM6H。這些鏡頭的場域是 Webcam，值是 FHD IR camera with Windows Hello support。這些鏡頭的產品是 AORUS MASTER 16 AM6H。這些鏡頭的場域是 Webcam，值是 FHD IR camera with Windows Hello support。這些鏡頭的產品是 AORUS MASTER 16 AM6H。這些鏡頭的場域是 Webcam，值是 FHD IR camera with Windows Hello support。這些鏡頭的產品是 AORUS MASTER 16 AM6H。這些鏡頭的場域是 Webcam，值是 FHD IR camera with Windows Hello support。這些鏡頭的產品是 AORUS MASTER 16 AM6"
+        "ttft_seconds": 0.8108340960000078,
+        "tps": 62.042622233214196,
+        "generated_tokens": 96,
+        "total_seconds": 1.5473233809999556,
+        "answer": "是的，所有 AORUS MASTER 16 AM6H 的視訊鏡頭都支援 Windows Hello。例如，AORUS MASTER 16 AM6H 的 BZH、BXH 和 BYH 版本都支援 FHD IR 視訊鏡頭，並提供 Windows Hello 支援。[1] [2] [3] [4] [5] 這些鏡頭都符合 Windows Hello 的要求，可以通過"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "token_limit_saturation",
-          "excessive_repetition"
+          "token_limit_saturation"
         ],
         "unexpected_refusal": false,
         "prompt_continuation": false,
         "token_limit_saturation": true,
-        "excessive_repetition": true,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -1496,21 +1475,22 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.046365987999991,
-        "tps": 11.31594998104293,
-        "generated_tokens": 13,
-        "total_seconds": 1.148820913999998,
-        "answer": " 99Wh Insufficient specification context to answer this question."
+        "ttft_seconds": 0.766322594999906,
+        "tps": 64.51661351387094,
+        "generated_tokens": 96,
+        "total_seconds": 1.4879888259999916,
+        "answer": "The battery capacity is 99Wh for all variants of the AORUS MASTER 16 AM6H. The battery capacity is the same across all variants. The battery capacity is 99Wh for all variants of the AORUS MASTER 16 AM6H. The battery capacity is 99Wh for all variants of the AORUS MASTER 16 AM6H. The battery capacity is 99Wh for all variants of the A"
       },
       "answer_quality": {
         "passes": false,
         "issues": [
-          "unexpected_refusal"
+          "token_limit_saturation",
+          "excessive_repetition"
         ],
-        "unexpected_refusal": true,
+        "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": false,
-        "excessive_repetition": false,
+        "token_limit_saturation": true,
+        "excessive_repetition": true,
         "unsupported_elaboration": false
       }
     },
@@ -1625,22 +1605,19 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 1.0085541480000302,
-        "tps": 83.74596602896737,
-        "generated_tokens": 251,
-        "total_seconds": 2.997159289000024,
-        "answer": " 357 x 254 x 23-29.9 mm, ~2.5 kg. 根据提供的信息，AORUS MASTER 16 AM6H 的机身尺寸是 357 x 254 x 23-29.9 mm，重量是 ~2.5 kg。由于没有提供特定的机身尺寸和重量，无法给出更精确的答案。因此，答案是：357 x 254 x 23-29.9 mm, ~2.5 kg。 根据提供的信息，AORUS MASTER 16 AM6H 的机身尺寸是 357 x 254 x 23-29.9 mm，重量是 ~2.5 kg。由于没有提供特定的机身尺寸和重量，无法给出更精确的答案。因此，答案是：357 x 254 x 23-29.9 mm, ~2.5 kg。 根据提供的信息，AORUS MASTER 16 AM6H 的机身尺寸是 357 x 254 x 23-29."
+        "ttft_seconds": 0.7803997620000018,
+        "tps": 61.990802755211945,
+        "generated_tokens": 93,
+        "total_seconds": 1.5002225470000212,
+        "answer": "機身尺寸为357 x 254 x 23-29.9 mm，重量约为2.5 kg。 根据提供的信息，AORUS MASTER 16 AM6H 的机身尺寸和重量分别是 357 x 254 x 23-29.9 mm 和 ~2.5 kg。 请注意，重量值在不同来源中略有差异，但通常在"
       },
       "answer_quality": {
-        "passes": false,
-        "issues": [
-          "token_limit_saturation",
-          "excessive_repetition"
-        ],
+        "passes": true,
+        "issues": [],
         "unexpected_refusal": false,
         "prompt_continuation": false,
-        "token_limit_saturation": true,
-        "excessive_repetition": true,
+        "token_limit_saturation": false,
+        "excessive_repetition": false,
         "unsupported_elaboration": false
       }
     },
@@ -1762,10 +1739,10 @@
         }
       ],
       "generation": {
-        "ttft_seconds": 8.509999815942138e-07,
-        "tps": 3364171.606012284,
+        "ttft_seconds": 1.406000023962406e-06,
+        "tps": 2511773.9650665508,
         "generated_tokens": 8,
-        "total_seconds": 2.377999976488354e-06,
+        "total_seconds": 3.1849999686528463e-06,
         "answer": "Insufficient specification context to answer this question."
       },
       "answer_quality": {
@@ -1784,8 +1761,7 @@
     "retrieval_field_hit_rate": 1.0,
     "bilingual_robustness": "Question set includes Traditional Chinese, English, and mixed phrasing.",
     "retrieval_variant_hit_rate": 1.0,
-    "answer_quality_pass_rate": 0.07692307692307693,
-    "refusal_behavior": "pass",
-    "artifact_context": "Pre-fix Colab real-model baseline retained to show the generation-control issues identified by this change; rerun benchmarks with the new concise budget for post-change model results."
+    "answer_quality_pass_rate": 0.46153846153846156,
+    "refusal_behavior": "pass"
   }
 }

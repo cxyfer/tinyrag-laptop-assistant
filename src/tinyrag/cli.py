@@ -58,8 +58,10 @@ def ask(
     metadata_path: Path = typer.Option(DEFAULT_METADATA_PATH, help="Index metadata path."),
     model_path: Path = typer.Option(Path("models/model.gguf"), help="GGUF model path."),
     n_ctx: int = typer.Option(2048, help="llama.cpp context length."),
-    temperature: float = typer.Option(0.1, help="Generation temperature."),
+    temperature: float = typer.Option(0.3, help="Generation temperature."),
     max_tokens: int = typer.Option(256, help="Maximum generated tokens."),
+    repeat_penalty: float = typer.Option(1.15, help="Penalty for repeated tokens."),
+    frequency_penalty: float = typer.Option(0.3, help="Penalty for frequent tokens."),
     n_gpu_layers: int = typer.Option(0, help="llama.cpp GPU offload layers."),
     top_k: int = typer.Option(5, help="Retrieved chunks."),
 ) -> None:
@@ -72,6 +74,8 @@ def ask(
         temperature=temperature,
         max_tokens=max_tokens,
         n_gpu_layers=n_gpu_layers,
+        repeat_penalty=repeat_penalty,
+        frequency_penalty=frequency_penalty,
     )
     metrics: GenerationMetrics | None = None
     for item in stream_answer(question, retrieved, config):
@@ -95,14 +99,24 @@ def benchmark(
     summary: Path = typer.Option(DEFAULT_SUMMARY_PATH, help="Markdown summary output path."),
     model_path: Path = typer.Option(Path("models/model.gguf"), help="GGUF model path."),
     n_ctx: int = typer.Option(2048, help="llama.cpp context length."),
-    temperature: float = typer.Option(0.1, help="Generation temperature."),
+    temperature: float = typer.Option(0.3, help="Generation temperature."),
     max_tokens: int = typer.Option(BENCHMARK_MODEL_MAX_TOKENS, help="Maximum generated tokens."),
+    repeat_penalty: float = typer.Option(1.15, help="Penalty for repeated tokens."),
+    frequency_penalty: float = typer.Option(0.3, help="Penalty for frequent tokens."),
     n_gpu_layers: int = typer.Option(0, help="llama.cpp GPU offload layers."),
     use_model: bool = typer.Option(False, help="Use real llama.cpp backend instead of mock echo."),
 ) -> None:
     """Run the fixed evaluation question set and write structured results."""
     index = VectorIndex.load(vectors_path, metadata_path)
-    config = LlamaCppConfig(model_path, n_ctx, temperature, max_tokens, n_gpu_layers)
+    config = LlamaCppConfig(
+        model_path=model_path,
+        n_ctx=n_ctx,
+        temperature=temperature,
+        max_tokens=max_tokens,
+        n_gpu_layers=n_gpu_layers,
+        repeat_penalty=repeat_penalty,
+        frequency_penalty=frequency_penalty,
+    )
     payload = run_benchmark(index, config, output, summary, use_model=use_model)
     typer.echo(f"Wrote {len(payload['questions'])} benchmark results to {output}")
     typer.echo(f"Wrote summary to {summary}")

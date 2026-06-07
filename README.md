@@ -12,7 +12,7 @@ TinyRAG is a uv-managed pure Python RAG assistant for answering grounded questio
 - Local NumPy vector index plus JSON metadata.
 - Hybrid retrieval combining dense similarity, keyword matches, field aliases, and variant boosts.
 - Traditional Chinese, English, and mixed-language benchmark questions.
-- llama.cpp-compatible streaming generation settings for model path, context length, temperature, max tokens, and GPU offload layers.
+- llama.cpp-compatible streaming generation settings for model path, context length, temperature, max tokens, repeat/frequency penalties, and GPU offload layers.
 - Benchmark output with retrieved evidence, TTFT, TPS, generated token count, total generation time, answer text, answer-quality checks, and README-ready Markdown summary.
 
 ## Setup
@@ -61,8 +61,10 @@ uv run --frozen --extra llama-cu121 tinyrag build-index
 uv run --frozen --extra llama-cu121 tinyrag ask "BXH 使用哪一張顯示卡？" \
   --model-path "$MODEL_PATH" \
   --n-ctx 2048 \
-  --temperature 0.1 \
+  --temperature 0.3 \
   --max-tokens 256 \
+  --repeat-penalty 1.15 \
+  --frequency-penalty 0.3 \
   --n-gpu-layers 35
 ```
 
@@ -94,8 +96,10 @@ Ask with the downloaded model:
 uv run --extra llama-cpu tinyrag ask "BXH 使用哪一張顯示卡？" \
   --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
   --n-ctx 2048 \
-  --temperature 0.1 \
+  --temperature 0.3 \
   --max-tokens 256 \
+  --repeat-penalty 1.15 \
+  --frequency-penalty 0.3 \
   --n-gpu-layers 0
 ```
 
@@ -115,7 +119,7 @@ Recommended model tiers:
 
 Practical settings:
 
-- Use low temperature, e.g. `0.1`, because values must preserve exact model names, numbers, units, and variants.
+- Use conservative anti-repetition decoding, e.g. `--temperature 0.3 --repeat-penalty 1.15 --frequency-penalty 0.3`, because answers must stay exact while avoiding sentence loops.
 - Start Qwen2.5 and Qwen3.5-2B with `--n-ctx 2048`; reduce if KV cache pressure appears.
 - Start Gemma 4 E2B with `--n-ctx 1024` or `1536`, then increase only after confirming memory headroom.
 - Start with `--n-gpu-layers 0` for CPU validation, then gradually increase GPU offload layers during CUDA testing.
@@ -200,8 +204,10 @@ The committed benchmark artifacts preserve a pre-fix Colab real-model baseline a
 uv run --extra llama-cpu tinyrag benchmark --use-model \
   --model-path models/qwen2.5-1.5b-instruct-q4_k_m.gguf \
   --n-ctx 2048 \
-  --temperature 0.1 \
+  --temperature 0.3 \
   --max-tokens 96 \
+  --repeat-penalty 1.15 \
+  --frequency-penalty 0.3 \
   --n-gpu-layers 0
 ```
 
@@ -211,8 +217,10 @@ For Colab GPU, use the CUDA extra and the same model variables from the notebook
 uv run --frozen --extra llama-cu121 tinyrag benchmark --use-model \
   --model-path "$MODEL_PATH" \
   --n-ctx 2048 \
-  --temperature 0.1 \
+  --temperature 0.3 \
   --max-tokens 96 \
+  --repeat-penalty 1.15 \
+  --frequency-penalty 0.3 \
   --n-gpu-layers 35
 ```
 

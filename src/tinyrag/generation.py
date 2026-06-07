@@ -27,9 +27,11 @@ LEADING_ANSWER_LABEL_RE = re.compile(r"^\s*(?:Answer|Final answer):\s*", re.IGNO
 class LlamaCppConfig:
     model_path: Path
     n_ctx: int = 2048
-    temperature: float = 0.1
+    temperature: float = 0.3
     max_tokens: int = 256
     n_gpu_layers: int = 0
+    repeat_penalty: float = 1.15
+    frequency_penalty: float = 0.3
     stop_sequences: tuple[str, ...] = field(default_factory=lambda: DEFAULT_STOP_SEQUENCES)
 
 
@@ -68,6 +70,8 @@ class LlamaCppBackend:
             prompt,
             max_tokens=config.max_tokens,
             temperature=config.temperature,
+            repeat_penalty=config.repeat_penalty,
+            frequency_penalty=config.frequency_penalty,
             stop=list(config.stop_sequences) or None,
             stream=True,
             echo=False,

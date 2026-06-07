@@ -73,15 +73,22 @@ def test_prompt_injects_context_and_grounding_instruction() -> None:
     assert "Insufficient specification context" in prompt
 
 
-def test_llama_backend_passes_stop_sequences() -> None:
+def test_llama_backend_passes_decoding_controls() -> None:
     fake_llama = FakeLlama()
     backend = LlamaCppBackend()
     backend._llm = fake_llama
     backend._loaded_path = Path("models/mock.gguf")
-    config = LlamaCppConfig(model_path=Path("models/mock.gguf"), stop_sequences=("\nQuestion:", "\nAnswer:"))
+    config = LlamaCppConfig(
+        model_path=Path("models/mock.gguf"),
+        repeat_penalty=1.2,
+        frequency_penalty=0.4,
+        stop_sequences=("\nQuestion:", "\nAnswer:"),
+    )
 
     assert list(backend.stream("prompt", config)) == ["ok"]
     assert fake_llama.kwargs is not None
+    assert fake_llama.kwargs["repeat_penalty"] == 1.2
+    assert fake_llama.kwargs["frequency_penalty"] == 0.4
     assert fake_llama.kwargs["stop"] == ["\nQuestion:", "\nAnswer:"]
 
 
