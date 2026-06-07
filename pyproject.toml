@@ -16,6 +16,36 @@ dev = [
     "pytest>=8.0.0",
     "ruff>=0.8.0",
 ]
+llama-cpu = [
+    "llama-cpp-python>=0.3.0",
+]
+llama-cu121 = [
+    "llama-cpp-python>=0.3.0",
+]
+
+[tool.uv]
+conflicts = [
+    [
+        { extra = "llama-cpu" },
+        { extra = "llama-cu121" },
+    ],
+]
+
+[tool.uv.sources]
+llama-cpp-python = [
+    { index = "llama-cpp-python-cpu", extra = "llama-cpu" },
+    { index = "llama-cpp-python-cu121", extra = "llama-cu121" },
+]
+
+[[tool.uv.index]]
+name = "llama-cpp-python-cpu"
+url = "https://abetlen.github.io/llama-cpp-python/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "llama-cpp-python-cu121"
+url = "https://abetlen.github.io/llama-cpp-python/whl/cu121"
+explicit = true
 
 [project.scripts]
 tinyrag = "tinyrag.cli:app"
