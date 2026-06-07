@@ -13,14 +13,11 @@ from tinyrag.streaming import measure_stream
 
 DEFAULT_STOP_SEQUENCES = (
     "\nQuestion:",
-    "\nAnswer:",
-    "\nFinal answer:",
     "\n\nQuestion:",
-    "\n\nAnswer:",
-    "\n\nFinal answer:",
 )
 PROMPT_CONTINUATION_RE = re.compile(r"\n\s*(?:Question|Answer|Final answer):", re.IGNORECASE)
 LEADING_ANSWER_LABEL_RE = re.compile(r"^\s*(?:Answer|Final answer):\s*", re.IGNORECASE)
+THINK_BLOCK_RE = re.compile(r"<think>.*?</think>", re.IGNORECASE | re.DOTALL)
 
 
 @dataclass(frozen=True)
@@ -79,7 +76,7 @@ class LlamaCppBackend:
         for event in stream:
             choices = event.get("choices", []) if isinstance(event, dict) else []
             if choices:
-                yield choices[0].get("text", "")
+                yield _choice_text(choices[0])
 
     def count_tokens(self, text: str) -> int:
         if self._llm is not None:
@@ -92,8 +89,33 @@ def fallback_token_count(text: str) -> int:
     return len(tokens)
 
 
+def _choice_text(choice: object) -> str:
+    if not isinstance(choice, dict):
+        return ""
+
+    text = choice.get("text")
+    if isinstance(text, str):
+        return text
+
+    delta = choice.get("delta")
+    if isinstance(delta, dict):
+        content = delta.get("content")
+        if isinstance(content, str):
+            return content
+
+    message = choice.get("message")
+    if isinstance(message, dict):
+        content = message.get("content")
+        if isinstance(content, str):
+            return content
+
+    content = choice.get("content")
+    return content if isinstance(content, str) else ""
+
+
 def normalize_generated_answer(answer: str) -> str:
-    text = LEADING_ANSWER_LABEL_RE.sub("", answer.strip(), count=1).strip()
+    text = THINK_BLOCK_RE.sub("", answer).strip()
+    text = LEADING_ANSWER_LABEL_RE.sub("", text, count=1).strip()
     if not text:
         return ""
 

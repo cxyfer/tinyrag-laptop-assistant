@@ -42,7 +42,7 @@ Open the notebook directly in Colab:
 
 Set **Runtime > Change runtime type > GPU**, then run the notebook cells. The notebook clones this repository, installs the CUDA llama.cpp wheel through `uv`, downloads the configured GGUF model, rebuilds the local index from the cached source, and runs a grounded answer with GPU offload.
 
-The notebook defines `MODEL_REPO`, `MODEL_FILE`, `MODEL_PATH`, `N_CTX`, and `N_GPU_LAYERS` near the top. It also keeps the previous Qwen2.5-1.5B baseline and Gemma 4 E2B candidate commented out for quick switching. To switch models, change those values together and keep context length plus GPU layers conservative until VRAM usage is confirmed.
+The notebook defines `MODEL_REPO`, `MODEL_FILE`, `MODEL_PATH`, `N_CTX`, and `N_GPU_LAYERS` near the top. It also keeps the previous Qwen2.5-1.5B baseline and Gemma 4 E2B candidate commented out for quick switching. To switch models, change those values together and keep context length plus GPU layers conservative until VRAM usage is confirmed. Qwen3.5 advertises a much larger training context than this low-VRAM demo uses, so llama.cpp may print `n_ctx_seq (2048) < n_ctx_train (...)`; that is expected and only means the full long-context capacity is not being allocated.
 
 Equivalent Colab shell flow with the default Qwen3.5 2B model:
 
@@ -68,7 +68,7 @@ uv run --frozen --extra llama-cu121 tinyrag ask "BXH 使用哪一張顯示卡？
   --n-gpu-layers 35
 ```
 
-`--n-gpu-layers 35` is the Colab starting point for the notebook. It fully offloaded the previous Qwen2.5 1.5B Q4_K_M default on a Colab Tesla T4 during validation; reduce it if your runtime reports lower VRAM or the new Qwen3.5 2B default needs more headroom. Unauthenticated Hugging Face downloads work for the demo, but setting `HF_TOKEN` can avoid rate limits.
+`--n-gpu-layers 35` and `--n-ctx 2048` are Colab starting points for the notebook. `--n-ctx 2048` intentionally keeps KV-cache memory low even when Qwen3.5 reports a much larger `n_ctx_train`; try 4096 or 8192 only after `nvidia-smi` shows enough headroom. The GPU-layer setting fully offloaded the previous Qwen2.5 1.5B Q4_K_M default on a Colab Tesla T4 during validation; reduce it if your runtime reports lower VRAM or the new Qwen3.5 2B default needs more headroom. Unauthenticated Hugging Face downloads work for the demo, but setting `HF_TOKEN` can avoid rate limits.
 
 ## Local CPU Development
 
@@ -120,7 +120,7 @@ Recommended model tiers:
 Practical settings:
 
 - Use conservative anti-repetition decoding, e.g. `--temperature 0.3 --repeat-penalty 1.15 --frequency-penalty 0.3`, because answers must stay exact while avoiding sentence loops.
-- Start Qwen2.5 and Qwen3.5-2B with `--n-ctx 2048`; reduce if KV cache pressure appears.
+- Start Qwen2.5 and Qwen3.5-2B with `--n-ctx 2048`; the Qwen3.5 `n_ctx_train` warning is expected at this setting. Increase to 4096 or 8192 only after confirming memory headroom, and reduce if KV cache pressure appears.
 - Start Gemma 4 E2B with `--n-ctx 1024` or `1536`, then increase only after confirming memory headroom.
 - Start with `--n-gpu-layers 0` for CPU validation, then gradually increase GPU offload layers during CUDA testing.
 - Treat Qwen3.5 GGUF files as community quantizations of official Qwen3.5 weights unless the model repository is published by the Qwen organization.

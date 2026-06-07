@@ -68,6 +68,8 @@ def test_prompt_injects_context_and_grounding_instruction() -> None:
     assert "Answer only from the retrieved context" in prompt
     assert "Keep the answer concise" in prompt
     assert "Do not repeat the question" in prompt
+    assert "/no_think" in prompt
+    assert "Do not output hidden reasoning" in prompt
     assert "Final answer:" in prompt
     assert "RTX™ 5090" in prompt
     assert "Insufficient specification context" in prompt
@@ -92,6 +94,26 @@ def test_llama_backend_passes_decoding_controls() -> None:
     assert fake_llama.kwargs["stop"] == ["\nQuestion:", "\nAnswer:"]
 
 
+def test_llama_backend_accepts_chat_style_stream_chunks() -> None:
+    class ChatStyleLlama:
+        def __call__(self, prompt: str, **kwargs):
+            del prompt, kwargs
+            return [
+                {"choices": [{"delta": {"content": "RTX"}}]},
+                {"choices": [{"message": {"content": " 5090"}}]},
+            ]
+
+        def tokenize(self, text: bytes):
+            return text.split()
+
+    backend = LlamaCppBackend()
+    backend._llm = ChatStyleLlama()
+    backend._loaded_path = Path("models/mock.gguf")
+    config = LlamaCppConfig(model_path=Path("models/mock.gguf"))
+
+    assert list(backend.stream("prompt", config)) == ["RTX", " 5090"]
+
+
 def test_streaming_metrics_with_mock_backend() -> None:
     config = LlamaCppConfig(model_path=Path("models/mock.gguf"))
     chunks = list(stream_answer("BXH GPU?", _retrieved("BXH GPU"), config, ContextEchoBackend()))
@@ -111,6 +133,16 @@ def test_generated_answer_strips_prompt_continuation() -> None:
     metrics = generate_answer("BXH GPU?", _retrieved("BXH GPU"), config, backend)
 
     assert metrics.answer == "RTX 5090"
+
+
+def test_generated_answer_strips_qwen_thinking_block() -> None:
+    config = LlamaCppConfig(model_path=Path("models/mock.gguf"))
+    backend = StaticBackend("<think>\nlook up context\n</think>\nFinal answer: RTX 5090")
+
+    metrics = generate_answer("BXH GPU?", _retrieved("BXH GPU"), config, backend)
+
+    assert metrics.answer == "RTX 5090"
+    assert metrics.generated_tokens > 0
 
 
 def test_answerable_generation_removes_mixed_refusal_text() -> None:
